@@ -7,7 +7,12 @@ trigger:
 - main
 
 pool:
-  vmImage: 'windows-latest'
+  name: DesktopApp
+  demands:
+  - Agent.Name -equals Desktop-Agent-1
+  - msbuild
+  - visualstudio
+  - vstest
 
 variables:
   solution: '**/*.sln'
